@@ -1,0 +1,35 @@
+2025-04-08 16:13:57   main.py --matcher sift-lg --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_sift-lg --save_images --device cuda
+2025-04-08 16:13:57   Arguments: Namespace(matcher='sift-lg', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_sift-lg')
+2025-04-08 16:13:57   The outputs are being saved in logs/out_sift-lg/2025-04-08_16-13-57
+2025-04-08 16:14:05   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 94, in <module>
+    model_output = util_matching.estimate_footprint(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 191, in estimate_footprint
+    num_inliers, new_fm = compute_matching(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 48, in compute_matching
+    num_inliers, fm, mkpts0, mkpts1 = matcher(image0, image1)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/base_matcher.py", line 179, in forward
+    matched_kpts0, matched_kpts1, all_kpts0, all_kpts1, all_desc0, all_desc1 = self._forward(img0, img1)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/lightglue.py", line 26, in _forward
+    feats0, feats1, matches01 = match_pair(self.extractor, self.matcher, img0, img1, device=self.device)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/utils.py", line 159, in match_pair
+    feats0 = extractor.extract(image0, **preprocess)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/utils.py", line 144, in extract
+    feats = self.forward({"image": img})
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/sift.py", line 211, in forward
+    p = self.extract_single_image(img)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/sift.py", line 158, in extract_single_image
+    keypoints, scores, scales, angles, descriptors = run_opencv_sift(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/sift.py", line 71, in run_opencv_sift
+    detections, descriptors = features.detectAndCompute(image, None)
+KeyboardInterrupt
+

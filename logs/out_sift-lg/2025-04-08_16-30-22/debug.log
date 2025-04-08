@@ -1,0 +1,15 @@
+2025-04-08 16:30:22   main.py --matcher sift-lg --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_sift-lg --save_images --device cuda
+2025-04-08 16:30:22   Arguments: Namespace(matcher='sift-lg', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_sift-lg')
+2025-04-08 16:30:22   The outputs are being saved in logs/out_sift-lg/2025-04-08_16-30-22
+2025-04-08 16:30:23   Loaded backend agg version v2.2.
+2025-04-08 16:30:24   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 94, in <module>
+    num_inliers, fm, predicted_footprint, pretty_printed_footprint  = util_matching.estimate_footprint(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 221, in estimate_footprint
+    transformed_corners = apply_homography_to_corners(HW, HW, fm) + HW
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 42, in apply_homography_to_corners
+    transformed_corners = cv2.perspectiveTransform(corners, fm)
+cv2.error: OpenCV(4.11.0) /io/opencv/modules/core/src/matmul.dispatch.cpp:550: error: (-215:Assertion failed) scn + 1 == m.cols in function 'perspectiveTransform'
+
+

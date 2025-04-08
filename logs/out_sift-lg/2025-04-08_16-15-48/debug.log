@@ -1,0 +1,9 @@
+2025-04-08 16:15:48   main.py --matcher sift-lg --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_sift-lg --save_images --device cuda
+2025-04-08 16:15:48   Arguments: Namespace(matcher='sift-lg', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_sift-lg')
+2025-04-08 16:15:48   The outputs are being saved in logs/out_sift-lg/2025-04-08_16-15-48
+2025-04-08 16:15:50   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 97, in <module>
+    if num_inliers == -1:
+NameError: name 'num_inliers' is not defined
+

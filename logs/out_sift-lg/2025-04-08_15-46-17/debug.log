@@ -1,0 +1,15 @@
+2025-04-08 15:46:17   main.py --matcher duster --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_sift-lg --save_images --device cuda
+2025-04-08 15:46:17   Arguments: Namespace(matcher='duster', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_sift-lg')
+2025-04-08 15:46:17   The outputs are being saved in logs/out_sift-lg/2025-04-08_15-46-17
+2025-04-08 15:46:17   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 51, in <module>
+    matcher = get_matcher(args.matcher, device=args.device, max_num_keypoints=args.max_num_keypoints)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/utils.py", line 158, in wrapper
+    return func(*a, **ka)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/__init__.py", line 216, in get_matcher
+    from matching.im_models import duster
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/duster.py", line 13, in <module>
+    from dust3r.inference import inference
+ModuleNotFoundError: No module named 'dust3r'
+

@@ -1,0 +1,51 @@
+2025-04-08 16:04:50   main.py --matcher duster --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_sift-lg --save_images --device cuda
+2025-04-08 16:04:50   Arguments: Namespace(matcher='duster', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_sift-lg')
+2025-04-08 16:04:50   The outputs are being saved in logs/out_sift-lg/2025-04-08_16-04-50
+2025-04-08 16:05:36   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 92, in <module>
+    num_inliers, fm, predicted_footprint, pretty_printed_footprint = util_matching.estimate_footprint(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 191, in estimate_footprint
+    num_inliers, new_fm = compute_matching(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 48, in compute_matching
+    num_inliers, fm, mkpts0, mkpts1 = matcher(image0, image1)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/base_matcher.py", line 179, in forward
+    matched_kpts0, matched_kpts1, all_kpts0, all_kpts1, all_desc0, all_desc1 = self._forward(img0, img1)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/duster.py", line 60, in _forward
+    output = inference(pairs, self.model, self.device, batch_size=1, verbose=self.verbose)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/dust3r/inference.py", line 67, in inference
+    res = loss_of_one_batch(collate_with_cat(pairs[i:i + batch_size]), model, None, device)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/dust3r/inference.py", line 45, in loss_of_one_batch
+    pred1, pred2 = model(view1, view2)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/dust3r/model.py", line 200, in forward
+    (shape1, shape2), (feat1, feat2), (pos1, pos2) = self._encode_symmetrized(view1, view2)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/dust3r/model.py", line 167, in _encode_symmetrized
+    feat1, feat2, pos1, pos2 = self._encode_image_pairs(img1, img2, shape1, shape2)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/dust3r/model.py", line 143, in _encode_image_pairs
+    out, pos, _ = self._encode_image(torch.cat((img1, img2), dim=0),
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/dust3r/model.py", line 136, in _encode_image
+    x = blk(x, pos)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/croco/models/blocks.py", line 128, in forward
+    x = x + self.drop_path(self.attn(self.norm1(x), xpos))
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+KeyboardInterrupt
+

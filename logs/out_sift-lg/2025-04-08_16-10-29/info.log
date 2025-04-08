@@ -1,0 +1,17 @@
+2025-04-08 16:10:29   main.py --matcher sift-lg --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_sift-lg --save_images --device cuda
+2025-04-08 16:10:29   Arguments: Namespace(matcher='sift-lg', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_sift-lg')
+2025-04-08 16:10:29   The outputs are being saved in logs/out_sift-lg/2025-04-08_16-10-29
+2025-04-08 16:10:41   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 73, in <module>
+    query_image = matcher.image_loader(query_path, args.img_size).to(args.device)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/base_matcher.py", line 46, in image_loader
+    return BaseMatcher.load_image(path, resize, rot_angle)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/base_matcher.py", line 52, in load_image
+    img = tfm.ToTensor()(Image.open(path).convert("RGB"))
+  File "/home/scur2410/.local/lib/python3.10/site-packages/PIL/Image.py", line 984, in convert
+    self.load()
+  File "/home/scur2410/.local/lib/python3.10/site-packages/PIL/ImageFile.py", line 300, in load
+    n, err_code = decoder.decode(b)
+KeyboardInterrupt
+

@@ -1,0 +1,40 @@
+2025-04-08 16:06:53   main.py --matcher loftr --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_loftr --save_images --device cuda
+2025-04-08 16:06:53   Arguments: Namespace(matcher='loftr', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_loftr')
+2025-04-08 16:06:53   The outputs are being saved in logs/out_loftr/2025-04-08_16-06-53
+2025-04-08 16:06:55   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=0 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:06:56   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=1 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:06:56   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=2 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:06:57   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=3 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:06:57   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=4 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:06:58   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=5 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:06:58   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=6 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:06:59   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=7 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:06:59   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=8 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:07:00   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=9 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:07:00   @36.4@38.2@35.4@39.3@0@1150@10@ISS050-E-70536@ pred_idx=0 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:07:01   @36.4@38.2@35.4@39.3@0@1150@10@ISS050-E-70536@ pred_idx=1 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:07:01   @36.4@38.2@35.4@39.3@0@1150@10@ISS050-E-70536@ pred_idx=2 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:07:01   @36.4@38.2@35.4@39.3@0@1150@10@ISS050-E-70536@ pred_idx=3 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:07:02   @36.4@38.2@35.4@39.3@0@1150@10@ISS050-E-70536@ pred_idx=4 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:07:02   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 75, in <module>
+    surrounding_image = matcher.image_loader(pred_path, args.img_size*3).to(args.device)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/base_matcher.py", line 46, in image_loader
+    return BaseMatcher.load_image(path, resize, rot_angle)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/base_matcher.py", line 54, in load_image
+    img = tfm.Resize(resize, antialias=True)(img)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torchvision/transforms/transforms.py", line 354, in forward
+    return F.resize(img, self.size, self.interpolation, self.max_size, self.antialias)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torchvision/transforms/functional.py", line 479, in resize
+    return F_t.resize(img, size=output_size, interpolation=interpolation.value, antialias=antialias)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torchvision/transforms/_functional_tensor.py", line 467, in resize
+    img = interpolate(img, size=size, mode=interpolation, align_corners=align_corners, antialias=antialias)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/functional.py", line 4678, in interpolate
+    return torch._C._nn._upsample_bilinear2d_aa(
+KeyboardInterrupt
+

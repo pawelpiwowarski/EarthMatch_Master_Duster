@@ -1,0 +1,26 @@
+2025-04-08 16:15:17   main.py --matcher sift-lg --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_sift-lg --save_images --device cuda
+2025-04-08 16:15:17   Arguments: Namespace(matcher='sift-lg', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_sift-lg')
+2025-04-08 16:15:17   The outputs are being saved in logs/out_sift-lg/2025-04-08_16-15-17
+2025-04-08 16:15:18   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=0 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:19   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=1 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:20   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=2 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:21   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=3 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:21   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=4 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:22   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=5 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:23   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=6 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:24   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=7 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:25   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=8 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:25   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=9 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:26   @36.4@38.2@35.4@39.3@0@1150@10@ISS050-E-70536@ pred_idx=0 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:27   @36.4@38.2@35.4@39.3@0@1150@10@ISS050-E-70536@ pred_idx=1 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:27   @36.4@38.2@35.4@39.3@0@1150@10@ISS050-E-70536@ pred_idx=2 iteration=00 MSG4_ERROR Error too many values to unpack (expected 4)
+2025-04-08 16:15:28   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 81, in <module>
+    tfm.ToPILImage()(surrounding_image).save(query_log_dir / "surrounding_img.jpg")
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torchvision/transforms/transforms.py", line 234, in __call__
+    return F.to_pil_image(pic, self.mode)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torchvision/transforms/functional.py", line 266, in to_pil_image
+    pic = pic.numpy(force=True)
+KeyboardInterrupt
+

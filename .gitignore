@@ -1,5 +1,4 @@
 .spyproject
-logs
 __pycache__
 model_weights
 data

@@ -1,0 +1,13 @@
+2025-04-08 16:17:51   main.py --matcher sift-lg --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_sift-lg --save_images --device cuda
+2025-04-08 16:17:51   Arguments: Namespace(matcher='sift-lg', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_sift-lg')
+2025-04-08 16:17:51   The outputs are being saved in logs/out_sift-lg/2025-04-08_16-17-51
+2025-04-08 16:17:52   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 94, in <module>
+    num_inliers, fm, predicted_footprint, pretty_printed_footprint  = util_matching.estimate_footprint(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 191, in estimate_footprint
+    num_inliers, new_fm = compute_matching(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 48, in compute_matching
+    num_inliers, fm, mkpts0, mkpts1 = matcher(image0, image1)
+ValueError: too many values to unpack (expected 4)
+

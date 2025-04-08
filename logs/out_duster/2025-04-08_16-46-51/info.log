@@ -1,0 +1,5 @@
+2025-04-08 16:46:51   main.py --matcher duster --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_duster --device cuda
+2025-04-08 16:46:51   Arguments: Namespace(matcher='duster', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=False, device='cuda', data_dir='data', log_dir='out_duster')
+2025-04-08 16:46:51   The outputs are being saved in logs/out_duster/2025-04-08_16-46-51
+2025-04-08 18:18:28   threshold=32708.18603073156
+2025-04-08 18:18:28   located=138 located_fclt_le_200=34 located_fclt_200_400=32 located_fclt_400_800=32 located_fclt_g_800=40 located_tilt_l_40=112 located_tilt_ge_40=26 located_cldp_l_40=111 located_cldp_ge_40=27

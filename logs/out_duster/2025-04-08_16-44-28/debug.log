@@ -1,0 +1,70 @@
+2025-04-08 16:44:28   main.py --matcher duster --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_duster --save_images --device cuda
+2025-04-08 16:44:28   Arguments: Namespace(matcher='duster', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_duster')
+2025-04-08 16:44:28   The outputs are being saved in logs/out_duster/2025-04-08_16-44-28
+2025-04-08 16:44:28   falling back to hashlib hashing: `pip install xxhash`for 50x faster cache checks
+2025-04-08 16:44:35   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=0 iteration=00 MSG1_NOT_FOUND num_inliers=-1
+2025-04-08 16:44:36   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=1 iteration=00 MSG1_NOT_FOUND num_inliers=-1
+2025-04-08 16:44:36   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=2 iteration=00 MSG1_NOT_FOUND num_inliers=-1
+2025-04-08 16:44:37   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=3 iteration=00 MSG1_NOT_FOUND num_inliers=-1
+2025-04-08 16:44:38   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=4 iteration=00 MSG1_NOT_FOUND num_inliers=-1
+2025-04-08 16:44:38   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=5 iteration=00 MSG1_NOT_FOUND num_inliers=-1
+2025-04-08 16:44:39   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=6 iteration=00 MSG1_NOT_FOUND num_inliers=-1
+2025-04-08 16:44:40   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=7 iteration=00 MSG1_NOT_FOUND num_inliers=-1
+2025-04-08 16:44:40   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=8 iteration=00 MSG1_NOT_FOUND num_inliers=-1
+2025-04-08 16:44:41   @-35.4@-72.5@-34.0@-71.0@29@1150@75@ISS050-E-35441@ pred_idx=9 iteration=00 MSG1_NOT_FOUND num_inliers=-1
+2025-04-08 16:44:45   Loaded backend agg version v2.2.
+2025-04-08 16:44:57   @36.4@38.2@35.4@39.3@0@1150@10@ISS050-E-70536@ pred_idx=0 iteration=00 MSG2_FOUND_TP num_inliers=10231 pred=36.43966, 38.16101; 36.41617, 38.31276; 36.32967, 38.30812; 36.35412, 38.14093
+2025-04-08 16:46:03   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 94, in <module>
+    num_inliers, fm, predicted_footprint, pretty_printed_footprint  = util_matching.estimate_footprint(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 206, in estimate_footprint
+    num_inliers, new_fm = compute_matching(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 80, in compute_matching
+    viz2d.save_plot(viz_path)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/viz2d.py", line 184, in save_plot
+    plt.savefig(path, bbox_inches="tight", pad_inches=0, **kw)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/pyplot.py", line 1243, in savefig
+    res = fig.savefig(*args, **kwargs)  # type: ignore[func-returns-value]
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/figure.py", line 3490, in savefig
+    self.canvas.print_figure(fname, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/backend_bases.py", line 2184, in print_figure
+    result = print_method(
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/backend_bases.py", line 2040, in <lambda>
+    print_method = functools.wraps(meth)(lambda *args, **kwargs: meth(
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/backends/backend_agg.py", line 498, in print_jpg
+    self._print_pil(filename_or_obj, "jpeg", pil_kwargs, metadata)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/backends/backend_agg.py", line 429, in _print_pil
+    FigureCanvasAgg.draw(self)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/backends/backend_agg.py", line 382, in draw
+    self.figure.draw(self.renderer)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/artist.py", line 94, in draw_wrapper
+    result = draw(artist, renderer, *args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/artist.py", line 71, in draw_wrapper
+    return draw(artist, renderer)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/figure.py", line 3257, in draw
+    mimage._draw_list_compositing_images(
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/image.py", line 134, in _draw_list_compositing_images
+    a.draw(renderer)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/artist.py", line 38, in draw_wrapper
+    return draw(artist, renderer, *args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/patches.py", line 4719, in draw
+    super().draw(renderer)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/artist.py", line 38, in draw_wrapper
+    return draw(artist, renderer, *args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/patches.py", line 4462, in draw
+    path, fillable = self._get_path_in_displaycoord()
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/patches.py", line 4676, in _get_path_in_displaycoord
+    posA = self._get_xy(self.xy1, self.coords1, self.axesA)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/patches.py", line 4645, in _get_xy
+    return s.transform(xy)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/transforms.py", line 1495, in transform
+    res = self.transform_affine(self.transform_non_affine(values))
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/transforms.py", line 2410, in transform_affine
+    return self.get_affine().transform(values)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/transforms.py", line 1784, in transform
+    return self.transform_affine(values)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/matplotlib/transforms.py", line 1853, in transform_affine
+    return affine_transform(values, mtx)
+KeyboardInterrupt
+

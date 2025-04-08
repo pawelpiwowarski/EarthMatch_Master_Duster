@@ -1,0 +1,13 @@
+2025-04-08 16:31:01   main.py --matcher sift-lg --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_sift-lg --save_images --device cuda
+2025-04-08 16:31:01   Arguments: Namespace(matcher='sift-lg', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_sift-lg')
+2025-04-08 16:31:01   The outputs are being saved in logs/out_sift-lg/2025-04-08_16-31-01
+2025-04-08 16:31:03   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 94, in <module>
+    num_inliers, fm, predicted_footprint, pretty_printed_footprint  = util_matching.estimate_footprint(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 207, in estimate_footprint
+    num_inliers, new_fm = compute_matching(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 58, in compute_matching
+    logging.debug(fm)
+NameError: name 'logging' is not defined
+

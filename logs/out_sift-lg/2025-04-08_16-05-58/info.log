@@ -1,0 +1,53 @@
+2025-04-08 16:05:58   main.py --matcher sift-lg --max_num_keypoints 2048 --img_size 512 --data_dir data --log_dir out_sift-lg --save_images --device cuda
+2025-04-08 16:05:58   Arguments: Namespace(matcher='sift-lg', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=True, device='cuda', data_dir='data', log_dir='out_sift-lg')
+2025-04-08 16:05:58   The outputs are being saved in logs/out_sift-lg/2025-04-08_16-05-58
+2025-04-08 16:06:09   
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 92, in <module>
+    num_inliers, fm, predicted_footprint, pretty_printed_footprint = util_matching.estimate_footprint(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 191, in estimate_footprint
+    num_inliers, new_fm = compute_matching(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 48, in compute_matching
+    num_inliers, fm, mkpts0, mkpts1 = matcher(image0, image1)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/base_matcher.py", line 179, in forward
+    matched_kpts0, matched_kpts1, all_kpts0, all_kpts1, all_desc0, all_desc1 = self._forward(img0, img1)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/lightglue.py", line 26, in _forward
+    feats0, feats1, matches01 = match_pair(self.extractor, self.matcher, img0, img1, device=self.device)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/utils.py", line 161, in match_pair
+    matches01 = matcher({"image0": feats0, "image1": feats1})
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/lightglue.py", line 474, in forward
+    return self._forward(data)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/lightglue.py", line 534, in _forward
+    desc0, desc1 = self.transformers[i](
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/lightglue.py", line 244, in forward
+    desc0 = self.self_attn(desc0, encoding0)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/lightglue.py", line 163, in forward
+    context = self.inner_attn(q, k, v, mask=mask)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/lightglue.py", line 112, in forward
+    args = [x.half().contiguous() for x in [q, k, v]]
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/LightGlue/lightglue/lightglue.py", line 112, in <listcomp>
+    args = [x.half().contiguous() for x in [q, k, v]]
+KeyboardInterrupt
+
