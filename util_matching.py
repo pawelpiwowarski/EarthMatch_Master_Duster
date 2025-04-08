@@ -3,7 +3,7 @@ import cv2
 import torch
 import shapely
 import numpy as np
-from lightglue import viz2d
+from matching import viz2d
 import matplotlib.pyplot as plt
 import torchvision.transforms as tfm
 from sklearn.linear_model import LogisticRegression
@@ -44,11 +44,26 @@ def apply_homography_to_corners(width, height, fm):
 
 
 def compute_matching(image0, image1, matcher, save_images=False, viz_params=None):
-    
-    num_inliers, fm, mkpts0, mkpts1 = matcher(image0, image1)
+    # the output was changged in the BaseMatcher class, not sure why this code was not changed
+    # so changing it intead
+    output_dictionairy= matcher(image0, image1)
+
+    num_inliers = output_dictionairy['num_inliers']
+
+    # also the term fundamental matrix is used when dealing with epipoloar geometry 
+    # I am not sure why the terms fundamenetal and homography matrix are interchanged in this code?
+
+    fm = output_dictionairy["H"]
+
+    # here just getting the matched keypoints from the two images after running RANSAC
+    mkpts0 = output_dictionairy['inlier_kpts0']
+    mkpts1 = output_dictionairy['inlier_kpts1']
+
+
     if num_inliers == 0:
         # The matcher did not find enough matches between img0 and img1
         return num_inliers, fm
+
     
     if save_images:
         path0 = viz_params["query_path"]

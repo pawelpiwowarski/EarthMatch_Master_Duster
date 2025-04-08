@@ -24,6 +24,8 @@ import util_matching
 from matching import get_matcher
 
 torch.set_grad_enabled(False)
+from argparse import Namespace
+torch.serialization.add_safe_globals([Namespace])
 
 parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument("--matcher", type=str, default="sift-lg", help="_")
@@ -50,6 +52,7 @@ assert args.data_dir.exists(), f"{args.data_dir} does not exist"
 
 matcher = get_matcher(args.matcher, device=args.device, max_num_keypoints=args.max_num_keypoints)
 
+
 queries_input_folders = sorted(list(args.data_dir.glob("*")))
 
 all_results = []
@@ -73,6 +76,7 @@ for folder in tqdm(queries_input_folders):
             pred_footprint = util_matching.path_to_footprint(pred_path)
             
             if args.save_images:
+                logging.debug('Saving Images')
                 query_log_dir.mkdir(exist_ok=True, parents=True)
                 tfm.ToPILImage()(query_image).save(query_log_dir / query_path.name)
                 tfm.ToPILImage()(surrounding_image).save(query_log_dir / "surrounding_img.jpg")
@@ -86,7 +90,9 @@ for folder in tqdm(queries_input_folders):
                     "query_path": query_path,
                     "pred_path": query_log_dir / f"pred_{iteration}.jpg",
                 }
-                num_inliers, fm, predicted_footprint, pretty_printed_footprint = util_matching.estimate_footprint(
+
+        
+                num_inliers, fm, predicted_footprint, pretty_printed_footprint  = util_matching.estimate_footprint(
                     fm,
                     query_image,
                     surrounding_image,
@@ -96,6 +102,11 @@ for folder in tqdm(queries_input_folders):
                     save_images=args.save_images,
                     viz_params=viz_params
                 )
+
+
+         
+
+
                 if num_inliers == -1:
                     # The iterative search is interruped due to invalid matching
                     found_match = False
