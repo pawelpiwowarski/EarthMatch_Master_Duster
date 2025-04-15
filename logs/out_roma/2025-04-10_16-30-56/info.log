@@ -1,0 +1,40 @@
+2025-04-10 16:30:56   main.py --matcher roma -nk 1024 -is 512 --device cuda --log_dir out_roma
+2025-04-10 16:30:56   Arguments: Namespace(matcher='roma', max_num_keypoints=1024, num_iterations=4, img_size=512, save_images=False, device='cuda', data_dir='./data', log_dir='out_roma')
+2025-04-10 16:30:56   The outputs are being saved in logs/out_roma/2025-04-10_16-30-56
+2025-04-10 16:34:52   
+Traceback (most recent call last):
+  File "/home/scur2410/.local/lib/python3.10/site-packages/PIL/ImageFile.py", line 554, in _save
+    fh = fp.fileno()
+AttributeError: '_idat' object has no attribute 'fileno'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/main.py", line 95, in <module>
+    num_inliers, fm, predicted_footprint, pretty_printed_footprint  = util_matching.estimate_footprint(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 206, in estimate_footprint
+    num_inliers, new_fm = compute_matching(
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/util_matching.py", line 49, in compute_matching
+    output_dictionairy= matcher(image0, image1)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1739, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1750, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/scur2410/miniconda3/envs/earth/lib/python3.10/site-packages/torch/utils/_contextlib.py", line 116, in decorate_context
+    return func(*args, **kwargs)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/base_matcher.py", line 179, in forward
+    matched_kpts0, matched_kpts1, all_kpts0, all_kpts1, all_desc0, all_desc1 = self._forward(img0, img1)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/roma.py", line 52, in _forward
+    img1_temp, img1_size = self.preprocess(img1)
+  File "/gpfs/home3/scur2410/EarthMatch_Master_Duster/image-matching-models/matching/im_models/roma.py", line 45, in preprocess
+    pil_img.save(temp.name, format="png")
+  File "/home/scur2410/.local/lib/python3.10/site-packages/PIL/Image.py", line 2596, in save
+    save_handler(self, fp, filename)
+  File "/home/scur2410/.local/lib/python3.10/site-packages/PIL/PngImagePlugin.py", line 1488, in _save
+    ImageFile._save(
+  File "/home/scur2410/.local/lib/python3.10/site-packages/PIL/ImageFile.py", line 558, in _save
+    _encode_tile(im, fp, tile, bufsize, None, exc)
+  File "/home/scur2410/.local/lib/python3.10/site-packages/PIL/ImageFile.py", line 584, in _encode_tile
+    errcode, data = encoder.encode(bufsize)[1:]
+KeyboardInterrupt
+
