@@ -1,5 +1,0 @@
-2025-04-08 17:22:42   main.py --matcher master --img_size 512 --log_dir out_master --device cuda
-2025-04-08 17:22:42   Arguments: Namespace(matcher='master', max_num_keypoints=2048, num_iterations=4, img_size=512, save_images=False, device='cuda', data_dir='./data', log_dir='out_master')
-2025-04-08 17:22:42   The outputs are being saved in logs/out_master/2025-04-08_17-22-42
-2025-04-08 18:09:36   threshold=627.0492642788988
-2025-04-08 18:09:36   located=228 located_fclt_le_200=74 located_fclt_200_400=52 located_fclt_400_800=51 located_fclt_g_800=51 located_tilt_l_40=172 located_tilt_ge_40=56 located_cldp_l_40=161 located_cldp_ge_40=67

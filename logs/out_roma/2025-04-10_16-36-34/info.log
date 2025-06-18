@@ -1,5 +1,0 @@
-2025-04-10 16:36:34   main.py --matcher roma -nk 1024 -is 512 --device cuda --log_dir out_roma
-2025-04-10 16:36:34   Arguments: Namespace(matcher='roma', max_num_keypoints=1024, num_iterations=4, img_size=512, save_images=False, device='cuda', data_dir='./data', log_dir='out_roma')
-2025-04-10 16:36:34   The outputs are being saved in logs/out_roma/2025-04-10_16-36-34
-2025-04-10 18:13:09   threshold=155.73303495444574
-2025-04-10 18:13:09   located=228 located_fclt_le_200=76 located_fclt_200_400=50 located_fclt_400_800=50 located_fclt_g_800=52 located_tilt_l_40=173 located_tilt_ge_40=55 located_cldp_l_40=161 located_cldp_ge_40=67

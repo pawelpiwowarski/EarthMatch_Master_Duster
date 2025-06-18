@@ -63,6 +63,12 @@ def compute_matching(image0, image1, matcher, save_images=False, viz_params=None
     if num_inliers == 0:
         # The matcher did not find enough matches between img0 and img1
         return num_inliers, fm
+        
+    if num_inliers > 0:
+        if fm is None or not (isinstance(fm, np.ndarray) and fm.shape == (3, 3)):
+            # Optionally, set num_inliers to 0 to force early return
+            print("number of inliers is not zero but the homography is None")
+            return 0, None
 
     
     if save_images:
@@ -299,3 +305,27 @@ def cldp_l_40(query_path):
 def cldp_ge_40(query_path):
     lat, lon, tilt, fclt, cldp = get_query_metadata(query_path)
     return cldp >= 40
+
+
+#My functions 
+
+
+import cv2
+import numpy as np
+
+def to_uint8_numpy(img):
+    if hasattr(img, 'cpu'):
+        img = img.cpu()
+    if hasattr(img, 'detach'):
+        img = img.detach()
+    if hasattr(img, 'numpy'):
+        img = img.numpy()
+    if img.ndim == 3 and img.shape[0] in [1, 3]:
+        img = np.transpose(img, (1, 2, 0))
+    if img.dtype != np.uint8:
+        img = np.clip(img, 0, 1) if img.max() <= 1.0 else np.clip(img, 0, 255)
+        img = (img * 255).astype(np.uint8) if img.max() <= 1.0 else img.astype(np.uint8)
+    return img
+
+
+
